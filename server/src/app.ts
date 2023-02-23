@@ -6,7 +6,7 @@ import routes from "./routes";
 import cors from 'cors';
 
 
-const port = config.get("port") as number;
+const PORT = process.env.PORT || config.get("port") as any;
 const host = config.get("host") as string;
 const url = config.get("dbUri") as string;
 const app = express();
@@ -22,8 +22,8 @@ mongoose
         url
     )
     .then(() => {
-        app.listen(port, host, () => {
-            console.log(`Server listing at http://${host}:${port}`);
+        app.listen(PORT,  () => {
+            console.log(`Server listing at http://localhost:${PORT}`);
             routes(app);
         });
     })
