@@ -7,8 +7,8 @@ import cors from 'cors';
 
 
 const PORT = process.env.PORT || config.get("port") as any;
-const host = config.get("host") as string;
-const url = config.get("dbUri") as string;
+//const host = config.get("host") as string;
+const url = "mongodb+srv://user:g09UU8Z2B8CYqlf7@cluster0.qkbvo.mongodb.net/StreamingApp?retryWrites=true&w=majority";
 const app = express();
 
 // Parses incoming requests with JSON payloads
